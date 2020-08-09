@@ -97,7 +97,7 @@ router.get("/comics/search/:title", async (req, res) => {
     console.log(title);
 
     const response = await axios.get(
-      `https://gateway.marvel.com/v1/public/comics?title=${title}&ts=${ts}&apikey=${process.env.PUBLIC_API_KEY}&hash=${hash}`
+      `https://gateway.marvel.com/v1/public/comics?titleStartsWith=${title}&ts=${ts}&apikey=${process.env.PUBLIC_API_KEY}&hash=${hash}`
     );
     console.log(response.data);
     res.json(response.data);
